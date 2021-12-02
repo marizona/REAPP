@@ -1,10 +1,10 @@
-import logo from '../images/logo.jpg'
+
 
 function NavBar() {
     return (
       <>
         {/*Nav bar */}
-        <nav className="fixed top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-30  drop-shadow-2xl">
+        <nav className="sticky top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-30 drop-shadow-2xl">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between">
               <div className="flex space-x-4">
@@ -28,6 +28,8 @@ function NavBar() {
                     <span className="font-bold">Better chick</span>
                   </ul>
                 </div>
+
+
                 {/* items 1*/}
                 <div className="hidden md:flex items-center space-x-8">
                   <ul className="py-5 px-3 hover:text-gray-500">Features</ul>
@@ -68,35 +70,7 @@ function NavBar() {
           </div>
         </nav>
   
-        {/* test content */}
-        <div className="flex flex-col content-center items-center">
-          <img
-            className="backdrop-opacity-20 mx-570"
-            alt="background"
-            src={logo}
-          />
-          {/* <div class="absolute z-40 justify-center w-80 pt-3 ml-auto  bottom-1 rounded bg-blue-400 text-white text-center leading-4">this is a text</div> */}
-        </div>
-  
-        {/*search*/}
-        <div className="flex flex-col items-center bottom-64 sticky">
-          <h1 className="text-6xl font-black text-purple-900 font-sans py-6">
-            Booking Done Right. Finally.
-          </h1>
-          <div className="flex py-0 sticky">
-            <button className="shadow-2xl bg-opacity-25  bg-black text-white py-3 px-10 text-xl rounded-t-lg focus:bg-white focus:text-gray-500">
-              Book
-            </button>
-            <button className="shadow-2xl bg-opacity-25  bg-black text-white py-3 px-10 text-xl rounded-t-lg focus:bg-white focus:text-gray-500">
-              Buy
-            </button>{" "}
-          </div>
-  
-          <input
-            placeholder="Where do you want to live?"
-            className=" absolute mt-40 py-6 text-left placeholder:text-2xl shadow-2xl rounded hover: px-40"
-          ></input>
-        </div>
+       
       </>
     );
   }
