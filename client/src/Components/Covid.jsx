@@ -3,7 +3,7 @@ import React from "react";
 export default function Covid() {
   return (
     <div className=''>
-    <section className="flex flex-cols-2 py-40 ">
+    <section className="flex flex-cols-2 py-40">
       <div className='px-6'>
       <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
     

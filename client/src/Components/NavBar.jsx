@@ -4,7 +4,7 @@ function NavBar() {
     return (
       <>
         {/*Nav bar */}
-        <nav className="sticky top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-30 drop-shadow-2xl">
+        <nav className="fixed w-full top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-30 drop-shadow-2xl">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between">
               <div className="flex space-x-4">
@@ -12,7 +12,7 @@ function NavBar() {
                 <div>
                   <ul className="flex items-center py-5 px-2">
                     <svg
-                      className="w-10 h-10 mr-1 text-blue-400"
+                      className="w-10 h-10 mr-1 text-green-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
