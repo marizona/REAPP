@@ -12,8 +12,9 @@ function App() {
   return (
     <div>
       <NavBar />
+      
+      <div className="lg:container lg:mx-auto lg:max-w-7xl">
       <Landing />
-      <div className="lg:container lg:mx-auto lg:px-64">
       <LocationGrid/>
       <Covid/>
       </div>

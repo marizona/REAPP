@@ -36,7 +36,7 @@ export default function LocationGrid() {
         <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
         </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        <div className=" transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
         </div>
         <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">

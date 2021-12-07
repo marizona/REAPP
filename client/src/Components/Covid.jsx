@@ -3,7 +3,7 @@ import React from "react";
 export default function Covid() {
   return (
     <div className=''>
-    <section className="flex flex-cols-2 py-40">
+    <section className="flex flex-cols-2 py-40 ">
       <div className='px-6'>
       <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
     
@@ -30,7 +30,7 @@ export default function Covid() {
         </h1>
       </div>
       <div>
-        <p className="px-12 text-xl">
+        <p className="px-12 text-xl flex">
           Rentberry is the first real estate platform that offers a fully
           digital rental journey. It automates all the standard rental tasks
           making the whole experience contact-free. From submitting personal

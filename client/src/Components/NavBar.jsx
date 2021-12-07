@@ -4,7 +4,7 @@ function NavBar() {
     return (
       <>
         {/*Nav bar */}
-        <nav className="fixed w-full top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-30 drop-shadow-2xl">
+        <nav className=" fixed w-full  top-0 backdrop-filter backdrop-blur-xl z-10 bg-opacity-30 drop-shadow-2xl">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between">
               <div className="flex space-x-4">
