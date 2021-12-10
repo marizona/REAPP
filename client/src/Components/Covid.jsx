@@ -2,12 +2,9 @@ import React from "react";
 
 export default function Covid() {
   return (
-    <div className=''>
-    <section className="flex flex-cols-2 py-40 ">
-      <div className='px-6'>
-      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-    
-  </svg>
+    <section className="flex flex-row p-32  justify-center  items-center flex-grow">
+      <div>
+        <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
         <svg
           class=" h-12 w-12 mr-3 text-green-500"
           fill="currentColor"
@@ -20,7 +17,7 @@ export default function Covid() {
             clip-rule="evenodd"
           ></path>
         </svg>
-        <h1 className="text-5xl font-bold py-4">
+        <h1 className="text-5xl px-auto font-bold align-middle">
           <span>
             {" "}
             Rent Safely
@@ -28,19 +25,20 @@ export default function Covid() {
           </span>
           <span className="text-purple-600 animate-pulse">COVID-19</span>
         </h1>
-      </div>
-      <div>
-        <p className="px-12 text-xl flex">
-          Rentberry is the first real estate platform that offers a fully
+        </div>
+        <div className="align-middle px-auto">
+        Rentberry is the first real estate platform that offers a fully
           digital rental journey. It automates all the standard rental tasks
           making the whole experience contact-free. From submitting personal
           information, credit reports, and rent negotiation using the custom
           offer feature to conducting virtual tours, eSigning rental agreements,
           and sending maintenance requests. All of it can be done in one place,
-          hassle-free, and with no face-to-face contact.{" "}
-        </p>
-      </div>
+          hassle-free, and with no face-to-face contact.
+        </div>
+    
+   
+       
+    
     </section>
-    </div>
   );
 }

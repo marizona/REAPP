@@ -2,12 +2,13 @@ import React from "react";
 
 
 
+
 export default function LocationGrid() {
   return (
-    <div className="my-40">
+    <section className="my-16">
         <div className='flex justify-center pb-20 '>
       <svg
-        className="animate-bounce w-12 h-12 text-blue-500"
+        className="animate-bounce w-20 h-12 border-2 rounded-2xl p-2 shadow text-blue-500 cursor-pointer"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -22,43 +23,43 @@ export default function LocationGrid() {
       </svg>
     
       </div>
-      <section className="flex flex-col text-center flex-wrap">
+      <div className="flex flex-col text-center flex-wrap">
         <h1 className="text-5xl font-bold">Featured Cities</h1>
         <h6 className="text-xl pt-8 pb-20">
           Discover thousands of apartments and homes for rent in 50+ countries{" "}
         </h6>
-      </section>
+      </div>
 
-      <section className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3  text-center gap-6">
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+      <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3  text-center gap-6">
+        <button className= "contrast-50 z-10bg-gray-50 filter transform hover:opacity-75 bg-cover bg-logo bg-no-repeat hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-blue-00 font-bold rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform bg-no-repeat bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className=" transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className=" transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
-        <div className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
+        </button>
+        <button className="transform  bg-green-500 hover:bg-green-600 transition duration-500 hover:scale-110 cursor-pointer opacity-3 text-white rounded px-4 py-20  shadow-3xl">
           New York
-        </div>
+        </button>
         
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

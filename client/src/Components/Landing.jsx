@@ -1,26 +1,28 @@
-import React from "react";
-import house from "../images/house.jpg";
+import { FaSearch } from "react-icons/fa";
 
 export default function Landing() {
   return (
-    <div className="max-w-screen-xl mt-52 px-8 xl:px-16 mx-auto bg-gray-100 shadow rounded-lg">
-      <div className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16 ">
-        <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
+    <div className="bg-background bg-contain bg:animate-pulse max-w-screen-xl mt-44 lg:p-32 px-8 xl:px-16 mx-auto lg:b shadow-2xl xl:lg:bg-gray-200 rounded-lg ">
+      <div className="grid grid-flow-row-reverse sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 ">
+        <div className=" px-16 flex flex-col justify-center items-start row-start-2 sm:row-start-1">
           {" "}
-          <h1 className=" text-6xl lg:text-3xl xl:text-5xl font-medium text-purple-900 leading-normal">
-            Booking Done Right.
+          <h1 className="text-4xl font-bold lg:text-5xl xl:text-7xl pb-12">
+            {" "}
+            Booking Done
+            <strong> Right.</strong> Finally
           </h1>
-          <p className="text-black-500 mt-4 mb-6">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-            sapiente inventore non voluptatum cum, enim, veniam nesciunt
-            cupiditate nisi voluptas necessitatibus hic culpa veritatis? Minus
-            numquam totam sunt quos itaque?
-          </p>
-          <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none undefined"> Get Started</button>
+        <div className="">
+        <input
+            placeholder="Where do you want to live?"
+            className="shadow-xl placeholder:text-2xl px-6 py-4 "
+          ></input>
+          <button className="btn btn-green ml-2 ">search</button>
+          </div>        
+         
         </div>
 
-        <div className="flex w-full">
-          <div className="h-full w-full">
+        <div className="flex w-full rounded-lg">
+          <div className="h-full w-full rounded-lg">
             <div
               style={{
                 display: "block",
@@ -37,8 +39,8 @@ export default function Landing() {
                   paddingTop: "62.58169934640523%",
                 }}
               ></div>
-              <img
-                className=" rounded-lg "
+              <div
+                className="bg-logo bg-contain  bg-no-repeat rounded-lg"
                 style={{
                   visibility: "visible",
                   position: "absolute",
@@ -55,13 +57,16 @@ export default function Landing() {
                   minHeight: "100%",
                   maxHeight: "100%",
                 }}
-                src={house}
-                alt="house"
               />
             </div>
           </div>
         </div>
+
+    
       </div>
+            
+      
+      
 
       {/* .card{
   background:white;
@@ -96,5 +101,6 @@ export default function Landing() {
         </div>
         </div> */}
     </div>
+    
   );
 }
