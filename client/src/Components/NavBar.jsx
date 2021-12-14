@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 function NavBar() {
   return (
     <>
@@ -8,7 +10,7 @@ function NavBar() {
             <div className="flex space-x-4">
               {/*Logo*/}
               <div>
-                <ul className="flex items-center py-5 ">
+                <Link to='/' className="flex items-center py-5 ">
                   <svg
                     className="w-10 h-10  border-2 mr-4  rounded-lg text-blue-500 p-2 cursor-pointer"
                     fill="none"
@@ -23,23 +25,21 @@ function NavBar() {
                       d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                     ></path>
                   </svg>
-                  <span className="font-bold">Rentify</span>
-                </ul>
+                  <Link to='/'><span className="font-bold">Rentify</span></Link>
+                </Link>
               </div>
 
               {/* items 1*/}
               <div className="hidden md:flex items-center space-x-8">
-                <ul className="py-5 px-3 hover:text-gray-500 cursor-pointer">Features</ul>
-                <ul className="py-5 px-3 hover:text-gray-500 cursor-pointer">Pricing</ul>
+                <ul className="py-5 px-3 hover:text-gray-500 cursor-pointer">Properties</ul>
+                <ul className="py-5 px-3 hover:text-gray-500 cursor-pointer">Contact</ul>
               </div>
             </div>
 
             {/* items 2*/}
             <div className="hidden md:flex items-center space-x-8">
-              <ul className="py-3 px-3 cursor-pointer">Login</ul>
-              <ul className=" text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300">
-                Signup
-              </ul>
+          <Link to="/signin" class="py-3 px-3 cursor-pointer">Login</Link>
+              <Link to="/signup" class="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300">Signup</Link>
             </div>
 
             {/*mobile hamburger */}

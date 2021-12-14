@@ -1,35 +1,24 @@
 import "./App.css";
-import Covid from "./Components/Covid";
-import CTA from "./Components/CTA";
-import Footer from "./Components/Footer";
-import Landing from "./Components/Landing";
-import LocationGrid from "./Components/LocationGrid";
+import Home from "./Pages/Home";
 import NavBar from "./Components/NavBar.jsx";
-
-import Testimony from "./Components/Testimony";
-
+import Signin from "./Components/Signin";
+import Signup from "./Components/Signup";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      
-      <div className="lg:container lg:mx-auto lg:max-w-7xl">
-  
-      <Landing />
-      <LocationGrid/>
-
-      </div>
-      <div className="bg-gray-50 shadow-xl">
-      <Covid/>
-      </div>
-      
-      <CTA/>
-      <div className="lg:container lg:mx-auto lg:px-64">
-        <Testimony/>
-      </div>
-      <Footer/>
-    </div>
+      <main className>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/signin" element={<Signin />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

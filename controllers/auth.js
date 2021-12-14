@@ -35,41 +35,41 @@ exports.signupController = async (req, res) => {
     }
 };
 
-// exports.signinController = async (req, res) => {
-//     const { email, password } = req.body;
-//     try {
-//         const user = await User.findOne({ email });
-//         if (!user) {
-//             return res.status(400).json({
-//                 errorMessage: 'Invalid credentials',
-//             });
-//         }
-//         const isMatch = await bcrypt.compare(password, user.password)
-//         if (!isMatch) {
-//             return res.status(400).json({
-//                 errorMessage: 'invalid credentials'
-//             });
-//         }
-//         const payload = {
-//             user: {
-//                 _id: user._id,
-//             },
-//         };
+exports.signinController = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({
+                errorMessage: 'Invalid credentials',
+            });
+        }
+        const isMatch = await bcrypt.compare(password, user.password)
+        if (!isMatch) {
+            return res.status(400).json({
+                errorMessage: 'invalid credentials'
+            });
+        }
+        const payload = {
+            user: {
+                _id: user._id,
+            },
+        };
 
-//         jwt.sign(payload, jwtSecret, { expiresIn: jwtExpire }, (err, token) => {
-//             if (err) console.log('jwt error', err);
-//             const { _id, email, role } = user;
+        jwt.sign(payload, jwtSecret, { expiresIn: jwtExpire }, (err, token) => {
+            if (err) console.log('jwt error', err);
+            const { _id, email, role } = user;
 
-//             res.json({
-//                 token,
-//                 user: { _id, email, role }
-//             });
-//         });
+            res.json({
+                token,
+                user: { _id, email, role }
+            });
+        });
 
-//     } catch (err) {
-//         console.log('signupController error:', err)
-//         res.status(500).json({
-//             errorMessage: 'server error'
-//         })
-//     }
-// };
+    } catch (err) {
+        console.log('signupController error:', err)
+        res.status(500).json({
+            errorMessage: 'server error'
+        })
+    }
+};
