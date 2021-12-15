@@ -3,7 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
-const authRoutes = require("./routes/auth");
+const signUp = require("./routes/signUp");
+const signIn = require("./routes/signIn");
 
 //middleware
 app.use(
@@ -16,7 +17,8 @@ app.use(
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use("/api/auth", authRoutes);
+app.use("/api/signup", signUp);
+app.use("/api/signin", signIn);
 
 connectDB();
 
