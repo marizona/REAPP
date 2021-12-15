@@ -6,8 +6,8 @@ function NavBar() {
   const history = useNavigate();
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  console.log(state);
   const user = useSelector((state) => state.auth);
+  console.log(state);
 
   const handleSignOut = () => {
     dispatch(signOut());
@@ -56,29 +56,37 @@ function NavBar() {
 
             {/* items 2*/}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/signin" class="py-3 px-3 cursor-pointer">
-                Login
-              </Link>
-              <Link
-                onClick={() => handleSignOut()}
-                to="/signup"
-                class="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
-              >
-                Logout
-              </Link>
-              <Link
-                to="/signup"
-                class="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
-              >
-                Signup
-              </Link>
+              {user._id ? (
+                <>
+                  <h6 variant="subtitle2">Hi {user.name}!</h6>
+                  <Link
+                    onClick={() => handleSignOut()}
+                    to="/signup"
+                    className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
+                  >
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/signin" className="py-3 px-3 cursor-pointer">
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
+                  >
+                    Signup
+                  </Link>
+                </>
+              )}
             </div>
 
             {/*mobile hamburger */}
             <div className="md:hidden flex items-center">
               <ul>
                 <svg
-                  class="w-8 h-8 color-gray-600"
+                  className="w-8 h-8 color-gray-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

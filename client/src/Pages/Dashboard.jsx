@@ -1,7 +1,7 @@
 import React from 'react'
 import AddProduct from '../Components/AddProduct'
 import Heading from '../Components/Heading'
-import ModalAdd from '../Components/ModalAdd'
+// import ModalAdd from '../Components/ModalAdd'
 import Pagination from '../Components/Pagination'
 import Table from '../Components/Table'
 
@@ -12,8 +12,6 @@ function Dashboard() {
             <AddProduct/>
             <Table/>
             <Pagination/>
-           
-          
         </div>
     )
 }

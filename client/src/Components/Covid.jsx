@@ -4,9 +4,9 @@ export default function Covid() {
   return (
     <section className="flex flex-row p-32  justify-center  items-center flex-grow">
       <div>
-        <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
+        <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
         <svg
-          class=" h-12 w-12 mr-3 text-green-500"
+          className=" h-12 w-12 mr-3 text-green-500"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
