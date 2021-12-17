@@ -16,15 +16,6 @@ exports.create = async (req, res) => {
   }
 };
 
-exports.list = async (req, res) => {
-  let products = await Product.find({})
-    .limit(parseInt(req.params.count))
-    .populate("category")
-    .sort([["createdAt", "desc"]])
-    .exec();
-  res.json(products);
-};
-
 exports.remove = async (req, res) => {
   try {
     const deleted = await Product.findOneAndRemove({
@@ -43,6 +34,11 @@ exports.read = async (req, res) => {
     .exec();
   res.json(product);
 };
+
+exports.list = async (req, res) => {
+    const product = await Product.find({});
+    res.json(product);
+  };
 
 exports.update = async (req, res) => {
   try {

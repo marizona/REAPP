@@ -82,7 +82,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      maxlength: 32,
+      maxlength:2000,
       text: true,
     },
 
@@ -112,7 +112,6 @@ const productSchema = new mongoose.Schema(
     },
     rooms: {
       type: Number,
-      required: true,
       trim: true,
       maxlength: 32,
     },

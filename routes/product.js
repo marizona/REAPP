@@ -16,7 +16,7 @@ router.post("/product",create);
 router.delete("/product/:slug",remove);
 router.get("/product/:slug",read);
 router.put("/product/:slug",update);
-router.post("/products",list);
+router.get("/products",list);
 
 
 module.exports = router;
