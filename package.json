@@ -21,6 +21,7 @@
   "homepage": "https://github.com/marizona/REAPP#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
     "concurrently": "^6.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -30,6 +31,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "slugify": "^1.6.4"
   }
 }
