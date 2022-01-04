@@ -1,18 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signOut } from "../Redux/actions/authActions";
 
 function NavBar() {
   const history = useNavigate();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
-  const user = useSelector((state) => state.auth);
-  console.log(state);
 
-  const handleSignOut = () => {
-    dispatch(signOut());
-    history.push("/signin");
-  };
   return (
     <>
       {/*Nav bar */}
@@ -56,30 +48,24 @@ function NavBar() {
 
             {/* items 2*/}
             <div className="hidden md:flex items-center space-x-8">
-              {user._id ? (
-                <>
-                  <h6 variant="subtitle2">Hi {user.name}!</h6>
-                  <Link
-                    onClick={() => handleSignOut()}
-                    to="/signup"
-                    className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
-                  >
-                    Logout
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/signin" className="py-3 px-3 cursor-pointer">
-                    Login
-                  </Link>
-                  <Link
-                    to="/signup"
-                    className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
-                  >
-                    Signup
-                  </Link>
-                </>
-              )}
+              <h6 variant="subtitle2"></h6>
+              <Link
+                onClick="#"
+                to="/signup"
+                className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
+              >
+                Logout
+              </Link>
+
+              <Link to="/signin" className="py-3 px-3 cursor-pointer">
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
+              >
+                Signup
+              </Link>
             </div>
 
             {/*mobile hamburger */}

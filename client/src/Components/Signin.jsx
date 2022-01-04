@@ -1,27 +1,14 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn } from "../Redux/actions/authActions";
 
 export default function Signin() {
-  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const [creds, setCreds] = useState({
-    email: "",
-    password: "",
-  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(signIn(creds.email, creds.password));
-    setCreds({ email: "", password: "" });
-  };
-
-  if (auth._id) return <Navigate to="/" />;
   return (
     <div className="lg:container lg:mx-auto lg:max-w-7xl">
       <div className=" mx-auto lg:mt-64 md:mt-34 max-w-sm p-4 bg-white  shadow-2xl rounded-lg  sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6">
           <h3 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign in
           </h3>
@@ -39,8 +26,7 @@ export default function Signin() {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="name@company.com"
               required
-              value={creds.email}
-              onChange={(e) => setCreds({ ...creds, email: e.target.value })}
+              value="bj"
             />
           </div>
           <div>
@@ -57,8 +43,6 @@ export default function Signin() {
               placeholder="••••••••"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
-              value={creds.password}
-              onChange={(e) => setCreds({ ...creds, password: e.target.value })}
             />
           </div>
           <div className="flex items-start">

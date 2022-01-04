@@ -1,29 +1,13 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../Redux/actions/authActions";
 
 function Signup() {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
-
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(signUp(user));
-    setUser({ name: "", email: "", password: "" });
-  };
-
-  if (auth._id) return <Navigate to="/" />;
   return (
     <div className="lg:container lg:mx-auto lg:max-w-7xl">
       <div className="mx-auto lg:mt-64 md:mt-34 sm:mt-44 max-w-sm p-4 shadow-2xl bg-white  rounded-lg shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6">
           <h3 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign up
           </h3>
@@ -42,8 +26,6 @@ function Signup() {
               placeholder="Name"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
-              value={user.name}
-              onChange={(e) => setUser({ ...user, name: e.target.value })}
             />
           </div>
 
@@ -61,8 +43,6 @@ function Signup() {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="name@company.com"
               required
-              value={user.email}
-              onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
           </div>
           <div>
@@ -79,8 +59,6 @@ function Signup() {
               placeholder="••••••••"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
-              value={user.password}
-              onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
           </div>
           <div className="flex items-start">
