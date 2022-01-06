@@ -9,8 +9,13 @@ import Dashboard from "./Pages/Dashboard";
 import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {login} from "./.
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userInfo());
+  }, [dispatch]);
   return (
     <BrowserRouter>
       <ToastContainer />

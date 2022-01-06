@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function Spinner() {
+
+  const Loader = () => {
   return (
     <div>
  <div>
@@ -10,3 +11,5 @@ export default function Spinner() {
     </div>
   );
 }
+
+export default Loader

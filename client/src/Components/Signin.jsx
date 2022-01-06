@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "./Loader";
+import {login} from "../actions/userActions.js"
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Signin() {
+
+export default function Signin({ }) {
   const dispatch = useDispatch();
+  const[email, setEmail]=useState('')
+  const[password, setPassword]=useState('')
+
+
+  const userLogin = useSelector((state) => state.userLogin)
+
+   const { loading, error, userInfo } = userLogin
+
+
+ const submitHandler = (e) => {
+    e.preventDefault()
+    dispatch(login(email, password))
+    toast(error)
+    
+  }
+
+if (userInfo) return <Navigate to="/" /> ;
+
 
   return (
     <div className="lg:container lg:mx-auto lg:max-w-7xl">
       <div className=" mx-auto lg:mt-64 md:mt-34 max-w-sm p-4 bg-white  shadow-2xl rounded-lg  sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <form className="space-y-6">
+           {loading && <Loader />}
+           
+        <form className="space-y-6" onSubmit={submitHandler}>
           <h3 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign in
           </h3>
@@ -26,7 +51,8 @@ export default function Signin() {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="name@company.com"
               required
-              value="bj"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -43,45 +69,23 @@ export default function Signin() {
               placeholder="••••••••"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
             />
-          </div>
-          <div className="flex items-start">
-            <div className="flex items-start">
-              <div className="flex items-center h-5">
-                <input
-                  id="remember"
-                  aria-describedby="remember"
-                  type="checkbox"
-                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                  required
-                />
-              </div>
-              <div className="ml-3 text-sm">
-                <label
-                  for="remember"
-                  className="font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Remember me
-                </label>
-              </div>
-            </div>
-            <Link
-              to=""
-              className="ml-auto text-sm text-blue-500 hover:underline dark:text-blue-500"
-            >
-              Lost Password?
-            </Link>
           </div>
           <button
             type="submit"
+        
             className="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
+          
             Login to your account
           </button>
+            
           <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered?{" "}
             <Link
-              to=""
+              to="/signup"
               className="text-blue-500 hover:underline dark:text-blue-500"
             >
               Create account

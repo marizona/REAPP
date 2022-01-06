@@ -46,7 +46,7 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   dispatch({ type: USER_LOGOUT });
-  document.location.href = "/login";
+  document.location.href = "/signin";
 };
 
 export const register = (name, email, password) => async (dispatch) => {
