@@ -61,11 +61,14 @@ const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: 'Sample name',
     price: 0,
-    user: req.user._id,
+    surface:0,
+    rooms:0,
+    bathrooms:0,
+    owner:"property's owner",
     image: '/images/sample.jpg',
-    brand: 'Sample brand',
+    location: 'location',
     category: 'Sample category',
-    countInStock: 0,
+    countInStock: true,
     numReviews: 0,
     description: 'Sample description',
   })
@@ -83,7 +86,11 @@ const updateProduct = asyncHandler(async (req, res) => {
     price,
     description,
     image,
-    brand,
+    owner,
+    surface,
+    location,
+    bathrooms,
+    rooms,
     category,
     countInStock,
   } = req.body
@@ -95,7 +102,11 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.description = description
     product.image = image
-    product.brand = brand
+    product.surface = surface
+    product.rooms=rooms
+    product.bathrooms=bathrooms
+    product.location=location
+    product.owner=owner
     product.category = category
     product.countInStock = countInStock
 
