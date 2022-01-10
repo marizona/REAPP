@@ -7,7 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Signin({ }) {
+export default function Signin() {
   const dispatch = useDispatch();
   const[email, setEmail]=useState('')
   const[password, setPassword]=useState('')
@@ -30,8 +30,10 @@ if (userInfo) return <Navigate to="/" /> ;
 
   return (
     <div className="lg:container lg:mx-auto lg:max-w-7xl">
+         {loading && <Loader />}
+      
       <div className=" mx-auto lg:mt-64 md:mt-34 max-w-sm p-4 bg-white  shadow-2xl rounded-lg  sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-           {loading && <Loader />}
+        
            
         <form className="space-y-6" onSubmit={submitHandler}>
           <h3 className="text-xl font-medium text-gray-900 dark:text-white">

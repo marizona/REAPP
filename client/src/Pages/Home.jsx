@@ -4,6 +4,7 @@ import CTA from "../Components/CTA";
 import Footer from "../Components/Footer";
 import Landing from "../Components/Landing";
 import LocationGrid from "../Components/LocationGrid";
+
 import Testimony from "../Components/Testimony";
 
 function Home() {
@@ -23,6 +24,7 @@ function Home() {
         <Testimony/>
       
       </div>
+
      <Footer/>
     </div>
   );

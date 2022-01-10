@@ -1,3 +1,4 @@
+
 import {
     USER_LOGIN_FAIL,
     USER_LOGIN_REQUEST,
@@ -18,7 +19,9 @@ import {
       case USER_LOGIN_FAIL:
         return { loading: false, error: action.payload }
       case USER_LOGOUT:
-        return {}
+        localStorage.clear();
+        return {
+        }
       default:
         return state
     }
@@ -33,6 +36,7 @@ import {
       case USER_REGISTER_FAIL:
         return { loading: false, error: action.payload }
       case USER_LOGOUT:
+        localStorage.clear();
         return {}
       default:
         return state

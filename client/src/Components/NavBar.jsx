@@ -1,9 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../actions/userActions";
 
 function NavBar() {
-  const history = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
 
   return (
     <>
@@ -48,14 +55,18 @@ function NavBar() {
 
             {/* items 2*/}
             <div className="hidden md:flex items-center space-x-8">
+            {userInfo ? (
+                <>
               <h6 variant="subtitle2"></h6>
-              <Link
-                onClick="#"
-                to="/signup"
+              <button
+                onClick={logoutHandler}
                 className="text-white py-3 px-3 btn btn-green cursor-pointer text-extrabold rounded transition duration-300"
               >
                 Logout
-              </Link>
+              </button>
+              </>
+              ) : (
+                <>
 
               <Link to="/signin" className="py-3 px-3 cursor-pointer">
                 Login
@@ -66,6 +77,8 @@ function NavBar() {
               >
                 Signup
               </Link>
+              </>
+              )}
             </div>
 
             {/*mobile hamburger */}
