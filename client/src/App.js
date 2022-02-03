@@ -9,6 +9,7 @@ import Dashboard from "./Pages/Dashboard";
 import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import EditProduct from "./Components/EditProduct";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path='/dashboard/product/:id/edit' element={<EditProduct/>} />
         </Routes>
       </main>
     </BrowserRouter>
